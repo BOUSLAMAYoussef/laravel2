@@ -8284,7 +8284,9 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 991.98px) {
   #sidebarCollapse span {
+    color:red;
     display: none; } }
+   
 
 #content {
   width: 100%;

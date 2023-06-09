@@ -1,29 +1,41 @@
 @extends('layout/layout-common')
 
 @section('space-work')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1>Login</h1>
 
-<h1>Login</h1>
-@if($errors->any())
-   @foreach($errors->all() as $error)
-   <p style="color:red;">{{$error}}</p>
-   @endforeach
-@endif
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $error)
+                            <p>{{$error}}</p>
+                        @endforeach
+                    </div>
+                @endif
 
-@if(Session::has('error'))
-    <p style="color:red;">{{ Session::get('error') }}</p>
-@endif
+                @if(Session::has('error'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
 
-<form action="{{ route('userLogin') }}" method="POST">
-    @csrf
+                <form action="{{ route('userLogin') }}" method="POST">
+                    @csrf
 
-    <input type="email" name="email" placeholder="Enter Email">
-    <br><br>
-    <input type="password" name="password" placeholder="Enter Password">
-    <br><br>
-   
-    <input type="submit" value="Login">
-</form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                    </div>
 
-
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection

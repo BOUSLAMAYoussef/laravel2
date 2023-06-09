@@ -16,7 +16,7 @@
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar">
 				<div class="custom-menu">
-					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+					<button type="button" id="sidebarCollapse" class="btn btn-info">
 	          <i class="fa fa-bars"></i>
 	          <span class="sr-only">Toggle Menu</span>
 	        </button>
@@ -29,9 +29,18 @@
           <li class="active">
             <a href="/admin/exam"><span class="fa fa-tasks mr-3"></span> Exams</a>
           </li>
-          <li>
-              <a href="/Logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+          <li class="active">
+            <a href="/admin/students"><span class="fa fa-graduation-cap mr-3"></span> Students</a>
           </li>
+          <li class="active">
+            <a href="{{ route('loadRegister') }}"><span class="fa fa-sign-out mr-3"></span> Register</a>
+          </li>
+          
+          
+          <li>
+              <a href="/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+          </li>
+          
           
         </ul>
 
