@@ -13,7 +13,7 @@
                         @endforeach
                     </div>
                 @endif
- 
+
                 <form action="{{ route('studentRegister') }}" method="POST">
                     @csrf
 
@@ -43,6 +43,10 @@
                 @if(Session::has('success'))
                     <p style="color:green;">{{ Session::get('success') }}</p>
                 @endif
+
+                <div class="text-center mt-3">
+                    <p>Already have an account? <a href="{{ route('loadLogin') }}">Login</a></p>
+                </div>
             </div>
         </div>
     </div>
